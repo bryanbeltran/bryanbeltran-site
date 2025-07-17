@@ -3,7 +3,11 @@ import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import Navbar from "@/components/Navbar";
 
-const font = Outfit({ subsets: ["latin"], display: "swap" });
+const outfit = Outfit({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-outfit", // Needed for Tailwind to pick it up
+});
 
 export const metadata: Metadata = {
   title: "Bryan Beltran",
@@ -12,8 +16,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className={`${font.className} bg-background text-foreground`}>
+    <html lang="en" className={`${outfit.variable} scroll-smooth`}>
+      <body className="font-sans bg-background text-foreground">
         <Navbar />
         <main className="max-w-4xl mx-auto px-6 py-10">
           {children}
