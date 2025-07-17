@@ -1,12 +1,18 @@
 import { getPostHtml, getPostSlugs } from "@/lib/markdown";
 
-export async function generateStaticParams(): Promise<{ slug: string }[]> {
+interface PageProps {
+  params: {
+    slug: string;
+  };
+}
+
+export async function generateStaticParams(): Promise<PageProps["params"][]> {
   return getPostSlugs().map((slug) => ({
     slug: slug.replace(/\.md$/, ""),
   }));
 }
 
-export default async function PostPage({ params }: { params: { slug: string } }) {
+export default async function PostPage({ params }: PageProps) {
   const { meta, contentHtml } = await getPostHtml(params.slug);
 
   return (
