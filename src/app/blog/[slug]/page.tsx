@@ -1,19 +1,22 @@
 import { getPostHtml, getPostSlugs } from "@/lib/markdown";
+import { notFound } from "next/navigation";
 
-interface PageProps {
-  params: {
-    slug: string;
-  };
-}
-
-export async function generateStaticParams(): Promise<PageProps["params"][]> {
+export async function generateStaticParams() {
   return getPostSlugs().map((slug) => ({
     slug: slug.replace(/\.md$/, ""),
   }));
 }
 
-export default async function PostPage({ params }: PageProps) {
-  const { meta, contentHtml } = await getPostHtml(params.slug);
+export default async function Page({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const post = await getPostHtml(params.slug);
+
+  if (!post) return notFound();
+
+  const { meta, contentHtml } = post;
 
   return (
     <main className="max-w-2xl mx-auto p-6">
@@ -25,4 +28,19 @@ export default async function PostPage({ params }: PageProps) {
       />
     </main>
   );
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const post = await getPostHtml(params.slug);
+
+  if (!post) return {};
+
+  return {
+    title: post.meta.title,
+    description: post.meta.description ?? "Read more from Bryan Beltran",
+  };
 }
