@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# bryanbeltran.us
 
-## Getting Started
+This is my personal website — built with [Next.js 15](https://nextjs.org) using the App Router, Tailwind CSS, TypeScript, and Markdown-based content. It’s where I publish my blog, showcase projects, and centralize what I’m working on.
 
-First, run the development server:
+I built it from scratch using `create-next-app` and intentionally kept it lightweight, fast, and easy to maintain.
+
+---
+
+## 🔧 Tech Stack
+
+- [Next.js 15](https://nextjs.org) (App Router)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [pnpm](https://pnpm.io/)
+- Markdown-powered blog posts (`gray-matter` + `remark`)
+- Deployed via [Vercel](https://vercel.com)
+
+---
+
+## 🚀 Running Locally
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+All content lives in `src/app/` and `content/posts/`. Blog posts are `.md` files with frontmatter metadata.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🧠 About Me
 
-To learn more about Next.js, take a look at the following resources:
+I’m Bryan Beltran — a backend-focused developer who builds practical tools grounded in real needs and personal use.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📁 Directory Overview
 
-## Deploy on Vercel
+```
+content/         → Markdown blog posts  
+public/          → SEO files, favicon, etc.  
+src/app/         → App Router-based pages  
+src/components/  → UI components  
+src/lib/         → Markdown and utility logic  
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📬 Feedback or Contact
+
+You can reach me via [bryanbeltran.us/about](https://bryanbeltran.us/about) or connect with me on [GitHub](https://github.com/bryanbeltran) or [LinkedIn](https://www.linkedin.com/in/bryan-beltran).
+
+---
+
+## 🪪 License
+
+MIT — see [LICENSE](LICENSE).
