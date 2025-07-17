@@ -3,11 +3,7 @@ import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import Navbar from "@/components/Navbar";
 
-const outfit = Outfit({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-outfit", // Needed for Tailwind to pick it up
-});
+const outfit = Outfit({ subsets: ["latin"], display: "swap", variable: "--font-outfit" });
 
 export const metadata: Metadata = {
   title: "Bryan Beltran",

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.bryanbeltran.us/sitemap.xml
+Sitemap: https://bryanbeltran.us/sitemap.xml
