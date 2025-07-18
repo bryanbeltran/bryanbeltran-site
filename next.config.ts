@@ -1,11 +1,9 @@
-import type { NextConfig } from "next";
-
 /** @type {import('next').NextConfig} */
-const nextConfig: NextConfig = {
+const nextConfig = {
   async headers() {
     return [
       {
-        source: "/(.*)", // Apply to all routes
+        source: "/(.*)", // Applies to all routes
         headers: [
           {
             key: "Strict-Transport-Security",
@@ -33,11 +31,12 @@ const nextConfig: NextConfig = {
           },
           {
             key: "Content-Security-Policy",
-            value: "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: *; font-src 'self';",
+            value:
+              "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: *; font-src 'self';",
           },
           {
             key: "Access-Control-Allow-Origin",
-            value: "https://bryanbeltran.us",
+            value: "https://bryanbeltran.us", // Restrict CORS to your domain
           },
         ],
       },
@@ -45,4 +44,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+module.exports = nextConfig;
